@@ -9,11 +9,16 @@ import java.util.List;
 @RestController
 public class ProjectsController {
 
-    private static final List<String> projectsList = new ArrayList<>(List.of("Library Management System",
-            "Hotel Management System", "Air Traffic Control System"));
+    private static final List<String> projectsList = new ArrayList<>(List.of("IndiaEats", "IndiaTravels",
+            "Air Traffic Control System"));
 
     @GetMapping("/projects")
     public Projects projects() {
         return new Projects(projectsList);
+    }
+
+    @GetMapping("/mini-projects")
+    public Projects miniProjects() {
+        return new Projects(List.of("Library Management System", "Hotel Management System", "Grocery Management System"));
     }
 }
